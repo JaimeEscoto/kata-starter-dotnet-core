@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace Kata
 {
@@ -8,11 +9,8 @@ namespace Kata
         {
             if(String.IsNullOrEmpty(input)) 
                 return 0;
-            if (input.Contains(","))
-            {
-                return int.Parse(input[0].ToString()) + int.Parse(input[2].ToString());
-            }
-            return int.Parse(input);
+            var strings = input.Split(",").Select(int.Parse);
+            return strings.Sum();
         }
     }
 }
