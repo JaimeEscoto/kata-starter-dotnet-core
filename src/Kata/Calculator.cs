@@ -8,6 +8,10 @@ namespace Kata
         {
             if(String.IsNullOrEmpty(input)) 
                 return 0;
+            if (input.Contains(","))
+            {
+                return int.Parse(input[0].ToString()) + int.Parse(input[2].ToString());
+            }
             return int.Parse(input);
         }
     }
